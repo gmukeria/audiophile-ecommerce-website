@@ -36,18 +36,18 @@ const TopSegment = styled.div`
   align-content: space-between;
 `;
 
-const Error = styled.label`
-  margin-right: 1px;
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  text-align: right;
-  letter-spacing: -0.214286px;
+// const Error = styled.label`
+//   margin-right: 1px;
+//   font-family: "Manrope";
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 12px;
+//   line-height: 16px;
+//   text-align: right;
+//   letter-spacing: -0.214286px;
 
-  color: #cd2c2c;
-`;
+//   color: #cd2c2c;
+// `;
 
 const Label = styled.label<{ error?: any }>`
   font-family: "Manrope";

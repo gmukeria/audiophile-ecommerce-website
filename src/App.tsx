@@ -71,11 +71,15 @@ declare module "@tanstack/router" {
 export const CartContext = createContext<{
   cartData: CartPropsType[];
   removeAll: () => void;
-  quantityHandler: (productId: string, quantity: number) => void;
+  quantityHandler: (productId: number, quantity: number) => void;
+  cartHandler: (item: CartPropsType) => void;
+  orderDoneHandler: () => void;
 }>({
   cartData: [],
   removeAll: () => {},
   quantityHandler: () => {},
+  cartHandler: () => {},
+  orderDoneHandler: () => {},
 });
 
 function Root() {

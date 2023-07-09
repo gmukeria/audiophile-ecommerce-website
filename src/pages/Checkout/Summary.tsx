@@ -1,13 +1,8 @@
 import styled from "styled-components";
-import { cartImage_xx99 } from "../../assets";
-import { useContext } from "react";
 import { CartContext } from "../../App";
+import { useContext } from "react";
 
-type ModalProps = {
-  onOpen: () => void;
-};
-
-const Summary: React.FC<ModalProps> = (): JSX.Element => {
+const Summary: React.FC = (): JSX.Element => {
   const { cartData } = useContext(CartContext);
 
   let total = 0;

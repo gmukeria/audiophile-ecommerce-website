@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "@tanstack/router";
 import styled from "styled-components";
 import * as yup from "yup";
@@ -148,7 +148,6 @@ const TopContainer = styled.div`
   width: 327px;
   display: flex;
   flex-direction: column;
-
   background-color: var(--white);
   border-radius: 8px;
 
@@ -167,7 +166,6 @@ const BottomContainer = styled.div`
   width: 327px;
   display: flex;
   flex-direction: column;
-
   background-color: var(--white);
   border-radius: 8px;
 
@@ -187,7 +185,6 @@ const InputSegment = styled.div`
   flex-direction: column;
   @media (min-width: 770px) {
     width: 690px;
-
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -231,12 +228,12 @@ const Shipping = styled.div`
   align-items: flex-start;
 `;
 
-const Payment = styled.div`
-  margin-top: 34px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
+// const Payment = styled.div`
+//   margin-top: 34px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+// `;
 
 const Header = styled.div`
   margin-top: 15px;

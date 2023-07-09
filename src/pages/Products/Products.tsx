@@ -16,9 +16,9 @@ const Products = () => {
       try {
         const filteredProducts = category
           ? productData.filter((product) => product.category === category)
-          : productData;
-        console.log("data", productData[0]);
-        setData(filteredProducts);
+          : [];
+
+        setData(filteredProducts as productType[]);
       } catch (error) {
         console.log(error);
       }

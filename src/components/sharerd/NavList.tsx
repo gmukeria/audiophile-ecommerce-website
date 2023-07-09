@@ -1,14 +1,13 @@
-import { useRef, useState } from "react";
 import { Link } from "@tanstack/router";
 import styled from "styled-components";
 
 const NavList = () => {
-  const [showMenu, setShowMenu] = useState<boolean>(false);
+  // const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
     <Wraper>
       <Link
         to="/"
-        onClick={() => setShowMenu(false)}
+        // onClick={() => setShowMenu(false)}
         style={{
           textDecoration: "none",
           width: "fit-content",
@@ -18,7 +17,7 @@ const NavList = () => {
       </Link>
       <Link
         to="/"
-        onClick={() => setShowMenu(false)}
+        // onClick={() => setShowMenu(false)}
         style={{
           textDecoration: "none",
           width: "fit-content",
@@ -28,18 +27,7 @@ const NavList = () => {
       </Link>
       <Link
         to="/"
-        onClick={() => setShowMenu(false)}
-        style={{
-          textDecoration: "none",
-          width: "fit-content",
-        }}
-      >
-        <NavItem>SPEAKERS</NavItem>
-      </Link>
-
-      <Link
-        to="/"
-        onClick={() => setShowMenu(false)}
+        // onClick={() => setShowMenu(false)}
         style={{
           textDecoration: "none",
           width: "fit-content",
