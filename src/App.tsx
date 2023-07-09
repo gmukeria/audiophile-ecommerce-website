@@ -4,7 +4,6 @@ import {
   Outlet,
   Router,
   Route,
-  RegisteredRouter,
 } from "@tanstack/router";
 
 import { Home, Products, ProductDetails, Checkout } from "./pages";
