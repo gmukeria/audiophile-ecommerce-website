@@ -68,7 +68,15 @@ declare module "@tanstack/router" {
   }
 }
 
-export const CartContext = createContext({});
+export const CartContext = createContext<{
+  cartData: CartPropsType[];
+  removeAll: () => void;
+  quantityHandler: (productId: string, quantity: number) => void;
+}>({
+  cartData: [],
+  removeAll: () => {},
+  quantityHandler: () => {},
+});
 
 function Root() {
   const [cartData, setCartData] = useState<CartPropsType[]>([]);
