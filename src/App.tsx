@@ -63,7 +63,7 @@ const routeTree = rootRoute.addChildren([
 const router = new Router({ routeTree });
 
 declare module "@tanstack/router" {
-  interface Register {
+  interface RegisterRouter {
     router: typeof router;
   }
 }
@@ -105,7 +105,6 @@ function Root() {
     const updatedCartItem = { image, productId, name, quantity, price };
     let updatedCartData = [];
 
-    // Check if the product already exists in the cart
     const existingCartItemIndex = cartData.findIndex(
       (item) => item.productId === productId
     );
