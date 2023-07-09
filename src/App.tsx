@@ -4,6 +4,7 @@ import {
   Outlet,
   Router,
   Route,
+  RegisteredRouter,
 } from "@tanstack/router";
 
 import { Home, Products, ProductDetails, Checkout } from "./pages";
@@ -63,7 +64,7 @@ const routeTree = rootRoute.addChildren([
 const router = new Router({ routeTree });
 
 declare module "@tanstack/router" {
-  interface Register {
+  interface RegisteredRouter {
     router: typeof router;
   }
 }
