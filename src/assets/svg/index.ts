@@ -1,0 +1,9 @@
+export { default as Cart } from "./Cart";
+export { default as Logo } from "./Logo";
+export { default as Burger } from "./Burger";
+export { default as Twitter } from "./Twitter";
+export { default as Facebook } from "./Facebook";
+export { default as Instagram } from "./Instagram";
+export { default as Close } from "./Close";
+export { default as IconArroeRight } from "./IconArrowRight";
+export { default as IconOrderConfirmation } from "./IconOrderConfirmation";

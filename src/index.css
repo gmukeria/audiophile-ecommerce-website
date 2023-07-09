@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange:            #D87D4A;
+  --light-orange:      #fbaf85;
+  --black:             #101010;
+  --light-black:       #000000;
+  --lemonChiffon:      #F1F1F1;
+  --light-lemonChiffon:#FAFAFA;
+  --white:             #FFFFFF;
+  --gray:              #595959;
+
+  --tablet: 770px;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  /* font-family: "Jost", sans-serif; */
+}
