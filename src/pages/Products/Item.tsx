@@ -1,9 +1,7 @@
 import styled from "styled-components";
-
-import ProductImage from "../../assets/mobile/product/image-category-page-preview.jpg";
 import Button from "../../components/sharerd/buttons/Button";
-import { Link } from "@tanstack/router";
 import { productType } from "../../types/productType";
+import { Link } from "@tanstack/router";
 
 interface ItemProps {
   productData: productType;
@@ -19,7 +17,6 @@ const Item: React.FC<ItemProps> = ({ productData }) => {
       <SectionTwo>
         <Title>{productData.name}</Title>
         <Desc>{productData.description}</Desc>
-
         <Link to={`/product/details/${productData.id.toString()}`}>
           <Button title="See Product" type="button" name="one" />
         </Link>
@@ -124,7 +121,6 @@ const Desc = styled.h2`
     text-align: left;
     width: 400px;
     font-size: 17px;
-
     margin-bottom: 40px;
   }
 `;

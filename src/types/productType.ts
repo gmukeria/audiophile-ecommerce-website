@@ -1,140 +1,56 @@
+interface ProductImage {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+interface CategoryImage {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+interface Feature {
+  text: string;
+}
+
+interface Include {
+  quantity: number;
+  item: string;
+}
+
+interface GalleryImage {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+interface OtherProduct {
+  slug: string;
+  name: string;
+  image: ProductImage;
+}
+
 export interface productType {
   id: number;
   slug: string;
   name: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
+  image: ProductImage;
   category: string;
-  categoryImage: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-  };
+  categoryImage: CategoryImage;
   new: boolean;
   price: number;
   description: string;
-  features: { text: string }[];
-  includes: [
-    {
-      quantity: number;
-      item: string;
-    },
-    {
-      quantity: number;
-      item: string;
-    },
-    {
-      quantity: number;
-      item: string;
-    },
-    {
-      quantity: number;
-      item: string;
-    },
-    {
-      quantity: number;
-      item: string;
-    }
-  ];
+  features: Feature[];
+  includes: Include[];
   gallery: {
-    first: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-    second: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
-    third: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-    };
+    first: GalleryImage;
+    second: GalleryImage;
+    third: GalleryImage;
   };
-  others: [
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    },
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    },
-    {
-      slug: string;
-      name: string;
-      image: {
-        mobile: string;
-        tablet: string;
-        desktop: string;
-      };
-    }
-  ];
+  others: OtherProduct[];
 }
 
-// export interface productType {
-//   id: number;
-//   slug: string;
-//   name: string;
-//   images: {
-//     mobile: string;
-//     tablet: string;
-//     desktop: string;
-//   };
-//   category: string;
-//   new: boolean;
-//   price: number;
-//   description: string;
-//   features: string;
-//   includes: {
-//     item: string;
-//     quantity: number;
-//   }[];
-//   gallery: {
-//     first: {
-//       mobile: string;
-//       tablet: string;
-//       desktop: string;
-//     };
-//     second: {
-//       mobile: string;
-//       tablet: string;
-//       desktop: string;
-//     };
-//     third: {
-//       mobile: string;
-//       tablet: string;
-//       desktop: string;
-//     };
-//   };
-//   others: {
-//     slug: string;
-//     name: string;
-//     image: {
-//       mobile: string;
-//       tablet: string;
-//       desktop: string;
-//     };
-//   }[];
-
-//   categoryImage: {
-//     mobile: string;
-//     tablet: string;
-//     desktop: string;
-//   };
-// }
+export interface ProductData {
+  productData: productType[];
+}

@@ -22,9 +22,9 @@ const Details = () => {
           ? productData.filter(
               (product) => product.id === parseInt(productId, 10)
             )
-          : productData;
+          : [];
 
-        setData(filteredProducts[0]);
+        setData(filteredProducts[0] as productType);
       } catch (error) {
         console.log(error);
       }
@@ -33,15 +33,15 @@ const Details = () => {
     getData();
   }, []);
 
-  const { cartData, cartHandler } = useContext(CartContext);
+  const { cartHandler } = useContext(CartContext);
 
   const AddProductHandler = () => {
     cartHandler({
-      image: data ? data?.image.mobile : 1,
       productId: data ? data?.id : 1,
-      name: data ? data?.name : "1",
+      image: data ? data?.image.mobile : "",
+      name: data ? data?.name : "",
       quantity: quantity,
-      price: data ? data?.price : 11,
+      price: data ? data?.price : 0,
     });
   };
 

@@ -3,8 +3,8 @@ export interface CartDataType {
 }
 
 export interface CartPropsType {
-  image: string;
   productId: number;
+  image: string;
   name: string;
   quantity: number;
   price: number;
