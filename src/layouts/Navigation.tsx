@@ -1,46 +1,46 @@
-import { Link } from "@tanstack/router";
+import { NavLink as BaseNavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Navigation = () => {
   return (
     <List>
-      <Link
+      <NavLink
         to="/"
         style={{
           textDecoration: "none",
           width: "fit-content",
         }}
       >
-        <NavItem>HOME</NavItem>
-      </Link>
-      <Link
+        HOME
+      </NavLink>
+      <NavLink
         to="/products/headphones"
         style={{
           textDecoration: "none",
           width: "fit-content",
         }}
       >
-        <NavItem>HEADPHONES</NavItem>
-      </Link>
-      <Link
+        HEADPHONES
+      </NavLink>
+      <NavLink
         to="/products/speakers"
         style={{
           textDecoration: "none",
           width: "fit-content",
         }}
       >
-        <NavItem>SPEAKERS</NavItem>
-      </Link>
+        SPEAKERS
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/products/earphones"
         style={{
           textDecoration: "none",
           width: "fit-content",
         }}
       >
-        <NavItem>EARPHONES</NavItem>
-      </Link>
+        EARPHONES
+      </NavLink>
     </List>
   );
 };
@@ -59,7 +59,7 @@ const List = styled.ul`
   }
 `;
 
-const NavItem = styled.h3`
+const NavLink = styled(BaseNavLink)`
   font-weight: 700;
   font-size: 13px;
   line-height: 25px;
@@ -69,6 +69,10 @@ const NavItem = styled.h3`
   width: fit-content;
   font-family: "Manrope";
   &&:hover {
+    color: var(--orange);
+  }
+
+  &.active {
     color: var(--orange);
   }
 

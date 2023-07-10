@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { imageHeader, imageHeaderDesktop, imageHeaderTablet } from "../assets";
 
 import Button from "./sharerd/buttons";
-import { Link } from "@tanstack/router";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   return (
@@ -30,11 +30,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   height: 530px;
+
   background-image: url(${imageHeader});
   background-position: center bottom;
   background-size: cover;
+  margin-bottom: 80px;
 
   @media (min-width: 770px) {
     height: 720px;
@@ -73,9 +76,10 @@ const Name = styled.h1`
   letter-spacing: 1.28571px;
   text-transform: uppercase;
   color: var(--white);
-  text-align: left;
+  text-align: center;
 
   @media (min-width: 1280px) {
+    text-align: left;
     width: 400px;
     font-size: 55px;
     line-height: 55px;
@@ -90,10 +94,14 @@ const Desc = styled.h4`
   font-family: "Manrope";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
-  text-align: left;
+  text-align: center;
   color: var(--white);
+
+  @media (min-width: 770px) {
+    width: 450px;
+  }
 
   @media (min-width: 1280px) {
     text-align: left;

@@ -3,12 +3,12 @@ import { NumberInput } from "../../components/sharerd/inputs";
 import { Categories, ProductDesc } from "../../components";
 import Button from "../../components/sharerd/buttons";
 import { productType } from "../../types/productType";
-import { Link, useParams } from "@tanstack/router";
+import CartContext from "../../contexts/CartContext";
+import { Link, useParams } from "react-router-dom";
 import { productData } from "../../data/products";
 import styled from "styled-components";
 import Features from "./Features";
 import InTheBox from "./InTheBox";
-import { CartContext } from "../../App";
 
 const Details = () => {
   const { productId } = useParams();
@@ -31,7 +31,7 @@ const Details = () => {
     };
 
     getData();
-  }, []);
+  }, [productId]);
 
   const { cartHandler } = useContext(CartContext);
 

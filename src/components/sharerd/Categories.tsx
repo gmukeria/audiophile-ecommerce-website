@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Link } from "@tanstack/router";
+import { Link } from "react-router-dom";
 
 import { IconArroeRight } from "../../assets/svg";
 import {
@@ -19,7 +19,7 @@ const Categories: React.FC<ModalProps> = ({ onClosed = () => {} }) => {
     <Wraper>
       <Item>
         <Image src={CategoryHeadphones} />
-        <Title>headphones</Title>
+        <Title>headphones </Title>
 
         <Link to="/products/headphones" onClick={onClosed}>
           <Button type="button" name="four" style={{ opacity: 0.5 }}>
@@ -54,9 +54,9 @@ const Categories: React.FC<ModalProps> = ({ onClosed = () => {} }) => {
 export default Categories;
 
 const Wraper = styled.div`
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   z-index: 1;
 

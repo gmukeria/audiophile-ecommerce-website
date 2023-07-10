@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Button from "../../components/sharerd/buttons/Button";
 import { productType } from "../../types/productType";
-import { Link } from "@tanstack/router";
+import { Link } from "react-router-dom";
 
 interface ItemProps {
   productData: productType;

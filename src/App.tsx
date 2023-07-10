@@ -1,88 +1,11 @@
-import {
-  RouterProvider,
-  RootRoute,
-  Outlet,
-  Router,
-  Route,
-} from "@tanstack/router";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, Products, ProductDetails, Checkout } from "./pages";
-import { Header, Footer } from "./layouts";
-import { createContext, useEffect, useState } from "react";
 import { CartPropsType } from "./types/cartTypes";
+import CartContext from "./contexts/CartContext";
+import { useEffect, useState } from "react";
+import { Layout } from "./layouts";
 
-const rootRoute = new RootRoute({
-  component: Root,
-});
-
-const indexRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/",
-  component: Home,
-});
-
-const checkoutRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/checkout",
-  component: Checkout,
-});
-
-const headphonesRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/products/$category",
-  component: Products,
-});
-
-const productDetailsRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/product/details/$productId",
-  component: ProductDetails,
-});
-
-const speakersRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/speakers",
-  component: Home,
-});
-
-const earphonesRoute = new Route({
-  getParentRoute: () => rootRoute,
-  path: "/earphones",
-  component: Home,
-});
-
-const routeTree = rootRoute.addChildren([
-  indexRoute,
-  headphonesRoute,
-  speakersRoute,
-  earphonesRoute,
-  productDetailsRoute,
-  checkoutRoute,
-]);
-
-const router = new Router({ routeTree });
-
-declare module "@tanstack/router" {
-  interface RegisterRouter {
-    router: typeof router;
-  }
-}
-
-export const CartContext = createContext<{
-  cartData: CartPropsType[];
-  removeAll: () => void;
-  quantityHandler: (productId: number, quantity: number) => void;
-  cartHandler: (item: CartPropsType) => void;
-  orderDoneHandler: () => void;
-}>({
-  cartData: [],
-  removeAll: () => {},
-  quantityHandler: () => {},
-  cartHandler: () => {},
-  orderDoneHandler: () => {},
-});
-
-function Root() {
+function App() {
   const [cartData, setCartData] = useState<CartPropsType[]>([]);
 
   useEffect(() => {
@@ -152,17 +75,21 @@ function Root() {
         quantityHandler,
       }}
     >
-      <div>
-        <Header />
-        <Outlet />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/products/:category" element={<Products />} />
+            <Route
+              path="/product/details/:productId"
+              element={<ProductDetails />}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </CartContext.Provider>
   );
-}
-
-function App() {
-  return <RouterProvider router={router} />;
 }
 
 export default App;

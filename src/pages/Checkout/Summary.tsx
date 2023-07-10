@@ -1,5 +1,5 @@
+import CartContext from "../../contexts/CartContext";
 import styled from "styled-components";
-import { CartContext } from "../../App";
 import { useContext } from "react";
 
 const Summary: React.FC = (): JSX.Element => {
@@ -39,6 +39,11 @@ const Summary: React.FC = (): JSX.Element => {
       <HeadLien>
         <Total>VAT (INCLUDED)</Total>
         <TotalPrice>$ 1079</TotalPrice>
+      </HeadLien>
+
+      <HeadLien>
+        <Total>GRAND TOTAL</Total>
+        <TotalPriceOrange>$ {1079 + 50 + total}</TotalPriceOrange>
       </HeadLien>
 
       <Button type="submit">checkout</Button>
@@ -133,6 +138,16 @@ const Total = styled.h4`
   color: var(--black);
 `;
 
+const TotalPriceOrange = styled.h5`
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: var(--orange);
+`;
+
 const TotalPrice = styled.h3``;
 
 const Button = styled.button`
@@ -149,7 +164,6 @@ const Button = styled.button`
   letter-spacing: 1px;
   text-transform: uppercase;
   border: none;
-
   background-color: var(--orange);
   color: var(--white);
 

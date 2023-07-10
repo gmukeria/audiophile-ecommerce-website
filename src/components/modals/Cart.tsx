@@ -1,8 +1,8 @@
-import { Link } from "@tanstack/router";
+import CartContext from "../../contexts/CartContext";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { CartContext } from "../../App";
-import { useContext } from "react";
 import NumberInput from "./NumberInput";
+import { useContext } from "react";
 
 type ModalProps = {
   onClose: () => void;
