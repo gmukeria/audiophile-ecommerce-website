@@ -1,4 +1,4 @@
-# React Hook Form [Demo](https://audiophile-ecommerce-website-4jab.vercel.app/)
+# Audiophile Ecommerce Website [Demo](https://audiophile-ecommerce-website-4jab.vercel.app/)
 
 ## Table of contents
 
