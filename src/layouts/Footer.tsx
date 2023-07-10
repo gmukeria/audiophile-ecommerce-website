@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { Logo, Facebook, Instagram, Twitter } from "../assets/svg";
+import styled from "styled-components";
 import Navigation from "./Navigation";
 
 const Footer = () => {
@@ -48,7 +48,6 @@ const Wraper = styled.div`
   width: 100%;
   height: 654px;
   bottom: 0;
-
   background-color: var(--black);
 
   @media (min-width: 770px) {
@@ -96,6 +95,7 @@ const MidleSegment = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 48px;
+
   @media (min-width: 770px) {
     align-items: self-start;
   }

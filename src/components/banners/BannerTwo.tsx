@@ -5,7 +5,7 @@ import {
   imageSpeakerZX7Desktop,
 } from "../../assets";
 import Button from "../sharerd/buttons";
-import { Link } from "@tanstack/router";
+import { Link } from "react-router-dom";
 
 const BannerTwo = () => {
   return (

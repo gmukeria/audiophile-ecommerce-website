@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
-import { Link } from "@tanstack/router";
-import styled from "styled-components";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import { CartContext } from "../../App";
 import { StringInput } from "../../components/sharerd/inputs";
+import { yupResolver } from "@hookform/resolvers/yup";
+import CartContext from "../../contexts/CartContext";
 import Modal from "../../components/modals/Modal";
 import SegmentTitle from "./SegmentTitle";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import OrderDone from "./OrderDone";
 import Summary from "./Summary";
+import * as yup from "yup";
 
 const schema = yup
   .object({

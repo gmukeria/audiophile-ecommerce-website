@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/router";
-import styled from "styled-components";
 import { IconOrderConfirmation } from "../../assets/svg";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 type ModalProps = {
   onClose: () => void;
@@ -9,10 +9,8 @@ const OrderDone: React.FC<ModalProps> = ({ onClose }): JSX.Element => {
   return (
     <Wrapper>
       <IconOrderConfirmation />
-
       <Title>THANK YOU FOR YOUR ORDER</Title>
       <Desc>You will receive an email confirmation shortly.</Desc>
-
       <Link to="/" onClick={onClose}>
         <Button>BACK TO HOME</Button>
       </Link>
@@ -26,11 +24,9 @@ const Wrapper = styled.div`
   padding: 32px;
   width: 327px;
   height: 370px;
-
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-
   background-color: var(--white);
 `;
 
@@ -72,6 +68,5 @@ const Button = styled.button`
   background-color: var(--orange);
   color: var(--white);
   border: none;
-
   cursor: pointer;
 `;

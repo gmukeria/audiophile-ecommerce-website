@@ -1,11 +1,12 @@
-import React, { useRef, useState } from "react";
-import { Link } from "@tanstack/router";
-import styled from "styled-components";
 import { Burger, Logo, Cart, Close } from "../assets/svg";
-import { Categories } from "../components";
-import Modal from "../components/modals/Modal";
 import { CartContent } from "../components/modals";
+import React, { useContext, useRef, useState } from "react";
+import Modal from "../components/modals/Modal";
+import { Categories } from "../components";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import Navigation from "./Navigation";
+import CartContext from "../contexts/CartContext";
 
 const Header = () => {
   const [isCartOpen, setCartIsOpen] = useState<boolean>(false);
@@ -16,6 +17,8 @@ const Header = () => {
       setShowMenu(false);
     }
   };
+
+  const { cartData } = useContext(CartContext);
 
   return (
     <Wraper>
@@ -46,10 +49,12 @@ const Header = () => {
       {isCartOpen ? (
         <CartButton onClick={() => setCartIsOpen(false)}>
           <Cart />
+          {cartData.length > 0 && <CartCount>{cartData.length}</CartCount>}
         </CartButton>
       ) : (
         <CartButton onClick={() => setCartIsOpen(true)}>
           <Cart />
+          {cartData.length > 0 && <CartCount>{cartData.length}</CartCount>}
         </CartButton>
       )}
 
@@ -84,6 +89,29 @@ const Wraper = styled.div`
     height: 85px;
     padding-left: 120px;
     padding-right: 120px;
+  }
+`;
+
+const CartCount = styled.span`
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #d87d4a;
+  font-size: 10px;
+  font-family: "Manrope";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  right: 17px;
+
+  @media (min-width: 770px) {
+    right: 42px;
+  }
+
+  @media (min-width: 1280px) {
+    right: 138px;
   }
 `;
 
@@ -127,8 +155,10 @@ const Backdrop = styled.div`
 
 const Menu = styled.div`
   width: 100%;
-  padding: 48px 24px;
   background-color: var(--dark);
+  @media (min-width: 770px) {
+    padding: 48px 24px;
+  }
 `;
 
 const CartButton = styled.div`

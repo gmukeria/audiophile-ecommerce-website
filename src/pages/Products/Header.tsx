@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
-const Header = () => {
+interface Props {
+  title: string;
+}
+
+const Header = ({ title }: Props) => {
   return (
     <Wrapper>
-      <Title>HEADPHONES</Title>
+      <Title>{title}</Title>
     </Wrapper>
   );
 };

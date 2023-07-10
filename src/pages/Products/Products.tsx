@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Header from "./Header";
 import Item from "./Item";
 import { Categories, ProductDesc } from "../../components";
-import { useParams } from "@tanstack/router";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { productData } from "../../data/products";
 import { productType } from "../../types/productType";
@@ -25,19 +25,22 @@ const Products = () => {
     };
 
     getData();
-  }, []);
+  }, [category]);
 
   return (
     <Wrapper>
-      <Header />
-
-      <ItemsContainer>
-        {data.map((productData) => (
-          <Item key={productData.id} productData={productData} />
-        ))}
-      </ItemsContainer>
-      <Categories />
-      <ProductDesc />
+      {data.length > 0 && (
+        <>
+          <Header title={data[0].category} />
+          <ItemsContainer>
+            {data.map((productData) => (
+              <Item key={productData.id} productData={productData} />
+            ))}
+          </ItemsContainer>
+          <Categories />
+          <ProductDesc />
+        </>
+      )}
     </Wrapper>
   );
 };
